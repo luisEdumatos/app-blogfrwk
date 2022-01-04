@@ -1,0 +1,63 @@
+<p-progressSpinner *ngIf="spinner"></p-progressSpinner>
+<p-toast position="top-center"></p-toast>
+<div class="container">
+  <h2>Nova conta</h2>
+
+  <div class="formulario">
+    <form [formGroup]="formRegister">
+      <div class="campo">
+        <div class="p-field">
+          <input type="text" placeholder="Usuario" pInputText [(ngModel)]="form.username" name="username" formControlName="username" [ngClass]="{'is-invalid': validation.username.touched && validation.username.errors}" class="form-input">
+          <div *ngIf="validation.username.errors" class="invalid-feedback">
+            <div *ngIf="validation.username.errors.required">
+              <span>O usuário não pode ficar em branco</span>
+            </div>
+            <div *ngIf="validation.username.errors.minlength">
+              <span>Não é permitido menos de 5 caracteres</span>
+            </div>
+            <div *ngIf="validation.username.errors.maxlength">
+              <span>Não é permitido mais de 20 caracteres</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="campo">
+        <div class="p-field">
+          <input type="text" placeholder="Email" pInputText [(ngModel)]="form.email" name="email" formControlName="email" [ngClass]="{'is-invalid': validation.email.touched && validation.email.errors}" class="form-input">
+          <div *ngIf="validation.email.errors" class="invalid-feedback">
+            <div *ngIf="validation.email.errors.required">
+              <span>O email não pode ficar em branco</span>
+            </div>
+            <div *ngIf="validation.email.errors.minlength">
+              <span>Não é permitido menos de 5 caracteres</span>
+            </div>
+            <div *ngIf="validation.email.errors.maxlength">
+              <span>Não é permitido mais de 20 caracteres</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="campo">
+        <div class="p-field">
+          <input type="text" placeholder="Senha" pInputText [(ngModel)]="form.password" name="password" formControlName="password" [ngClass]="{'is-invalid': validation.password.touched && validation.password.errors}" class="form-input">
+          <div *ngIf="validation.password.errors" class="invalid-feedback">
+            <div *ngIf="validation.password.errors.required">
+              <span>A senha não pode ficar em branco</span>
+            </div>
+            <div *ngIf="validation.password.errors.minlength">
+              <span>Não é permitido menos de 5 caracteres</span>
+            </div>
+            <div *ngIf="validation.password.errors.maxlength">
+              <span>Não é permitido mais de 20 caracteres</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p-button label="Criar conta" icon="pi pi-user-plus" [disabled]="formRegister.invalid" (click)="onSubmit()" type="button" class="p-button-outlined"></p-button>
+      <button [routerLink]="['/login']" pButton pRipple icon="pi pi-sign-in" type="button" label="Fazer Login" class="p-button-outlined"></button>
+    </form>
+  </div>
+</div>
