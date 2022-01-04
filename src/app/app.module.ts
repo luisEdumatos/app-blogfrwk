@@ -17,6 +17,8 @@ import { ConfirmationService } from 'primeng/api';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import {ToastModule} from 'primeng/toast';
 
+import { HeaderComponent } from './layout/header/header.component';
+import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { authInterceptorProviders } from './security/_helpers/auth.interceptor';
 import { RegisterComponent } from './security/register/register.component';
 import { LoginComponent } from './security/login/login.component';
@@ -25,8 +27,10 @@ import { LoginComponent } from './security/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
+    HeaderComponent,
+    AuthenticationComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
