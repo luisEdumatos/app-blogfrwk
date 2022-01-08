@@ -3,11 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from '../models/post';
 import { ConfirmationService } from 'primeng/api';
 import { BroadCastService } from 'src/app/broadcast.service';
+import {MessageService} from 'primeng/api';
 
 @Component({
-  selector: 'app-client',
+  selector: 'app-post',
   templateUrl: '../templates/post.component.html',
-  styleUrls: ['../styles/post.component.css']
+  styleUrls: ['../styles/post.component.css'],
+  providers: [MessageService]
 })
 export class PostComponent implements OnInit {
 
@@ -19,7 +21,7 @@ export class PostComponent implements OnInit {
 
   spinner = false;
 
-  constructor(private postService: PostService, private confirmationService: ConfirmationService) { }
+  constructor(private postService: PostService, private confirmationService: ConfirmationService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.broadCast();
@@ -54,6 +56,7 @@ export class PostComponent implements OnInit {
           error: err => {
             console.log('Error', err);
             BroadCastService.get("spinner").emit(false);
+            this.messageService.add({severity:'error', summary:'Erro', detail:'Erro: Você está tentando excluir uma publicação que não foi criada por você. Para exclui-la, solicite ao dono!'});
           }
         });
       }

@@ -1,1 +1,45 @@
-TESTE
+<p-progressSpinner *ngIf="spinner"></p-progressSpinner>
+<p-toast position="top-center"></p-toast>
+<h2>Publicações do Blog Frwk</h2>
+
+<br>
+
+<div class="card">
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+       <button [routerLink]="['/posts/create-post']"pButton pRipple label="Nova Publicação" icon="pi pi-plus" class="p-button-success p-mr-2"></button>
+       </ng-template>
+       <ng-template pTemplate="right">
+         <div class="p-d-flex p-ai-center p-jc-between">
+           <span class="p-input-icon-left">
+               <i class="pi pi-search"></i>
+               <input pInputText type="text" placeholder="Filtrar por descrição" [(ngModel)]="filter"/>
+           </span>
+         </div>
+       </ng-template>
+  </p-toolbar>
+
+  <p-table [value]="filteredPosts">
+    <ng-template pTemplate="header">
+        <tr>
+          <th> </th>
+          <th> </th>
+          <th> Descrição </th>
+          <th> </th>
+          <th> </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-filteredPosts>
+        <tr>
+          <td> {{ filteredPosts.description }} </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td>
+            <button [routerLink]="['/posts/info', filteredPosts.id]" pButton pRipple type="button" label="Editar" class="p-button-outlined"></button>
+            <button (click)="deleteById(filteredPosts.id)" pButton pRipple type="button" label="Deletar" class="p-button-outlined p-button-danger"></button>
+          </td>
+        </tr>
+    </ng-template>
+  </p-table>
+</div>

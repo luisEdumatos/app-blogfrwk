@@ -1,3 +1,4 @@
+import { PostCreate } from './../models/post-create';
 import { environment } from './../../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
@@ -13,8 +14,8 @@ export class PostService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createPost(post: Post): Observable<Post> {
-    return this.httpClient.post<Post>(`${this.postsUrl}`, post);
+  createPost(post: PostCreate): Observable<PostCreate> {
+    return this.httpClient.post<PostCreate>(`${this.postsUrl}`, post);
   }
 
   listAll(): Observable<Post[]> {

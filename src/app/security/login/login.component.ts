@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         BroadCastService.get("spinner").emit(false);
-        this.router.navigate(['/clients']);
+        this.router.navigate(['/posts']);
       },
       err => {
         this.errorMessage = err.error.message;

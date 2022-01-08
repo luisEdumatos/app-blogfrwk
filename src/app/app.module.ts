@@ -19,6 +19,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import {ToastModule} from 'primeng/toast';
 
 import { PostComponent } from './business/post/components/post.component';
+import { PostCreateComponent } from './business/post/components/post-create.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
@@ -30,6 +31,7 @@ import { RegisterComponent } from './security/register/register.component';
   declarations: [
     AppComponent,
     PostComponent,
+    PostCreateComponent,
     HeaderComponent,
     HomeComponent,
     AuthenticationComponent,
