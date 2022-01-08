@@ -9,9 +9,28 @@ import { Post } from '../models/post';
 })
 export class PostService {
 
-  private clientsUrl: string = environment.apiUrl + 'client';
+  private postsUrl: string = environment.apiUrl + 'posts';
 
   constructor(private httpClient: HttpClient) { }
 
+  createPost(post: Post): Observable<Post> {
+    return this.httpClient.post<Post>(`${this.postsUrl}`, post);
+  }
+
+  listAll(): Observable<Post[]> {
+    return this.httpClient.get<Post[]>(this.postsUrl);
+  }
+
+  findById(id: number): Observable<Post> {
+    return this.httpClient.get<Post>(`${this.postsUrl}/${id}`);
+  }
+
+  update(post: Post): Observable<Post> {
+    return this.httpClient.put<Post>(`${this.postsUrl}/${post.id}`, post);
+  }
+
+  deleteById(id: number): Observable<any> {
+    return this.httpClient.delete<any>(`${this.postsUrl}/${id}`);
+  }
 
 }
