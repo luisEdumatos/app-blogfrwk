@@ -1,0 +1,31 @@
+<p-progressSpinner *ngIf="spinner"></p-progressSpinner>
+<p-toast position="top-center"></p-toast>
+<div class="container">
+  <h2>Novo comentário</h2>
+
+  <hr/>
+  <div class="formulario">
+    <form [formGroup]="formComment">
+      <div class="campo">
+        <label>Comentário:</label>
+        <div class="p-field">
+          <input pInputText [(ngModel)]="_commentCreate.comment" placeholder="Comentário" name="comment" formControlName="comment" [ngClass]="{'is-invalid': validation.comment.touched && validation.comment.errors}" class="form-input">
+          <div *ngIf="validation.comment.errors" class="invalid-feedback">
+            <div *ngIf="validation.comment.errors.required">
+              <span>A descrição da publicação não pode ficar em branco</span>
+            </div>
+            <div *ngIf="validation.comment.errors.minlength">
+              <span>Não é permitido menos de 10 caracteres</span>
+            </div>
+            <div *ngIf="validation.comment.errors.maxlength">
+              <span>Não é permitido mais de 80 caracteres</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button [routerLink]="['/posts/info', _commentCreate.post.id]" pButton pRipple type="button" label="Voltar" class="p-button-outlined p-button-secondary"></button>
+      <button [disabled]="formComment.invalid" (click)="createComment()" pButton pRipple type="button" label="Salvar" class="p-button-outlined p-button-success"></button>
+    </form>
+  </div>
+</div>

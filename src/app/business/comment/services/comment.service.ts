@@ -14,7 +14,7 @@ export class CommentService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createcomment(comment: CommentCreate): Observable<CommentCreate> {
+  createComment(comment: CommentCreate): Observable<CommentCreate> {
     return this.httpClient.post<CommentCreate>(`${this.commentsUrl}`, comment);
   }
 
