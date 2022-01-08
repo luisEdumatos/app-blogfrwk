@@ -21,6 +21,7 @@ import {ToastModule} from 'primeng/toast';
 import { PostComponent } from './business/post/components/post.component';
 import { PostCreateComponent } from './business/post/components/post-create.component';
 import { PostDetailComponent } from './business/post/components/post-detail.component';
+import { CommentComponent } from './business/comment/components/comment.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
@@ -34,6 +35,7 @@ import { RegisterComponent } from './security/register/register.component';
     PostComponent,
     PostCreateComponent,
     PostDetailComponent,
+    CommentComponent,
     HeaderComponent,
     HomeComponent,
     AuthenticationComponent,
