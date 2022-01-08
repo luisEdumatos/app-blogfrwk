@@ -1,0 +1,61 @@
+<p-progressSpinner *ngIf="spinner"></p-progressSpinner>
+<p-toast position="top-center"></p-toast>
+<div class="container">
+  <h2>Detalhes da publicação</h2>
+
+  <hr/>
+  <div class="formulario">
+    <form [formGroup]="formPost" *ngIf="_post">
+      <div class="campo">
+        <label>Descrição:</label>
+        <div class="p-field">
+          <input pInputText [(ngModel)]="_post.description" placeholder="Descrição" name="description" formControlName="description" [ngClass]="{'is-invalid': validation.description.touched && validation.description.errors}" class="form-input">
+          <div *ngIf="validation.description.errors" class="invalid-feedback">
+            <div *ngIf="validation.description.errors.required">
+              <span>A descrição da publicação não pode ficar em branco</span>
+            </div>
+            <div *ngIf="validation.description.errors.minlength">
+              <span>Não é permitido menos de 10 caracteres</span>
+            </div>
+            <div *ngIf="validation.description.errors.maxlength">
+              <span>Não é permitido mais de 100 caracteres</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>Imagem principal:</label>
+        <div class="p-field">
+          <input pInputText [(ngModel)]="_post.mainImage" placeholder="Imagem principal" name="mainImage" formControlName="mainImage" [ngClass]="{'is-invalid': validation.mainImage.touched && validation.mainImage.errors}" class="form-input">
+          <div *ngIf="validation.mainImage.errors" class="invalid-feedback">
+            <div *ngIf="validation.mainImage.errors.minlength">
+              <span>Não é permitido menos de 10 caracteres</span>
+            </div>
+            <div *ngIf="validation.mainImage.errors.maxlength">
+              <span>Não é permitido mais de 100 caracteres</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>Link principal:</label>
+        <div class="p-field">
+          <input pInputText [(ngModel)]="_post.mainLink" placeholder="Link principal" name="mainLink" formControlName="mainLink" [ngClass]="{'is-invalid': validation.mainLink.touched && validation.mainLink.errors}" class="form-input">
+          <div *ngIf="validation.mainLink.errors" class="invalid-feedback">
+            <div *ngIf="validation.mainLink.errors.minlength">
+              <span>Não é permitido menos de 10 caracteres</span>
+            </div>
+            <div *ngIf="validation.mainLink.errors.maxlength">
+              <span>Não é permitido mais de 100 caracteres</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button [routerLink]="['/posts']" pButton pRipple type="button" label="Voltar" class="p-button-outlined p-button-secondary"></button>
+      <button [disabled]="formPost.invalid" (click)="update()" pButton pRipple type="button" label="Salvar" class="p-button-outlined p-button-success"></button>
+    </form>
+  </div>
+</div>

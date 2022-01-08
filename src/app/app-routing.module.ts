@@ -1,6 +1,7 @@
 import { AuthGuard } from './security/_services/auth.guard';
 import { PostComponent } from './business/post/components/post.component';
 import { PostCreateComponent } from './business/post/components/post-create.component';
+import { PostDetailComponent } from './business/post/components/post-detail.component';
 import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './security/login/login.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: '', component: PostComponent },
       { path: 'posts', component: PostComponent },
       { path: 'posts/create-post', component: PostCreateComponent },
+      { path: 'posts/info/:id', component: PostDetailComponent },
     ],
     canActivate: [AuthGuard]
   },
