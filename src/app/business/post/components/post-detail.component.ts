@@ -53,7 +53,7 @@ export class PostDetailComponent implements OnInit {
   update(): void {
     BroadCastService.get("spinner").emit(true);
     this.postService.update(this._post).subscribe({
-      next: client => {
+      next: post => {
         console.log('Post saved with success');
         BroadCastService.get("spinner").emit(false);
         this.messageService.add({severity:'success', summary: 'Sucesso!', detail: 'As informações da publicação foram atualizadas.'});

@@ -23,6 +23,7 @@ import { PostCreateComponent } from './business/post/components/post-create.comp
 import { PostDetailComponent } from './business/post/components/post-detail.component';
 import { CommentComponent } from './business/comment/components/comment.component';
 import { CommentCreateComponent } from './business/comment/components/comment-create.component';
+import { CommentDetailComponent } from './business/comment/components/comment-detail.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
@@ -38,6 +39,7 @@ import { RegisterComponent } from './security/register/register.component';
     PostDetailComponent,
     CommentComponent,
     CommentCreateComponent,
+    CommentDetailComponent,
     HeaderComponent,
     HomeComponent,
     AuthenticationComponent,
