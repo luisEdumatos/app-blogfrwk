@@ -32,6 +32,10 @@ export class PhotoService {
     return this.httpClient.get<PhotoDetail[]>(this.photosUrl);
   }
 
+  listAllByPostId(id: number): Observable<PhotoDetail[]> {
+    return this.httpClient.get<PhotoDetail[]>(`${this.photosUrl}/byPost/${id}`);
+  }
+
   findById(id: number): Observable<PhotoDetail> {
     return this.httpClient.get<PhotoDetail>(`${this.photosUrl}/${id}`);
   }

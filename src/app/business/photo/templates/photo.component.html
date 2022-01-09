@@ -1,5 +1,39 @@
-<h1>Upload,View & Delete File</h1>
-<input type="file" id="customFile" (change)="selectFile($event)" placeholder="File To Upload">
+<h1>Adicione novas fotos ao Album da publicação</h1>
 
-<button class="btn btn-primary" [disabled]="!selectedFiles" (click)="upload()">Save File</button>
+<input type="file" (change)="selectFile($event)">
 
+<button pButton pRipple type="button" [disabled]="!selectedFiles" (click)="upload()" label="Salvar foto" class="p-button-outlined p-button-success"></button>
+
+<br><br>
+
+<p-progressSpinner *ngIf="spinner"></p-progressSpinner>
+<p-toast position="top-center"></p-toast>
+<h2>Fotos do Album</h2>
+
+<br>
+
+<div class="card">
+  <p-table [value]="_photos">
+    <ng-template pTemplate="header">
+        <tr>
+          <th> </th>
+          <th> </th>
+          <th> Fotos </th>
+          <th> </th>
+          <th> </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-_photos>
+        <tr>
+          <td> {{ _photos.photoPath }} </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td class="botoes">
+            <button onclick="_photos.photoPath" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"></button>
+            <button (click)="deleteById(_photos.id)" pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"></button>
+          </td>
+        </tr>
+    </ng-template>
+  </p-table>
+</div>

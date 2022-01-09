@@ -56,6 +56,7 @@
 
       <button [routerLink]="['/posts']" pButton pRipple type="button" label="Voltar" class="p-button-outlined p-button-secondary"></button>
       <button [disabled]="formPost.invalid" (click)="update()" pButton pRipple type="button" label="Salvar" class="p-button-outlined p-button-success"></button>
+      <button [routerLink]="['/posts/info', _post.id, 'photo-gallery']" pButton pRipple type="button" label="Galeria de fotos" class="p-button-outlined p-button-secondary"></button>
     </form>
   </div>
 </div>

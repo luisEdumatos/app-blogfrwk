@@ -17,6 +17,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import {ToastModule} from 'primeng/toast';
+import {FileUploadModule} from 'primeng/fileupload';
 
 import { PostComponent } from './business/post/components/post.component';
 import { PostCreateComponent } from './business/post/components/post-create.component';
@@ -64,7 +65,8 @@ import { RegisterComponent } from './security/register/register.component';
     SelectButtonModule,
     ConfirmDialogModule,
     ProgressSpinnerModule,
-    ToastModule
+    ToastModule,
+    FileUploadModule
   ],
   providers: [authInterceptorProviders, ConfirmationService],
   bootstrap: [AppComponent]
