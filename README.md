@@ -1,8 +1,23 @@
 # AppBlogfrwk
 
-Aplicação Blogfrwk feita em Angular 12
+Aplicação Blogfrwk feita em Angular
+
+## Requisitos 
+
+**Seu ambiente deve estar configurado e/ou ter instalado:**
+
+- NodeJS
+- Angular CLI 12
 
 ## Como executar
+
+**1. Clone a aplicação**
+
+```bash
+git clone https://github.com/luisEdumatos/app-blogfrwk.git
+```
+
+**1. Inicie a aplicação**
 
 Execute `ng serve` na pasta do projeto. Vá até `http://localhost:4200/`. A tela inicial de login será carregada.
 
