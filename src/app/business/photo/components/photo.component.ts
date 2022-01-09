@@ -3,6 +3,7 @@ import { PhotoService } from './../services/photo.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { ConfirmationService } from 'primeng/api';
+import { Location } from '@angular/common';
 import { Photo } from '../models/photo';
 import { Post } from '../../post/models/post';
 import { BroadCastService } from 'src/app/broadcast.service';
@@ -27,7 +28,7 @@ export class PhotoComponent {
   file : string;
   spinner = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private confirmationService: ConfirmationService, private photoService: PhotoService, private https:HttpClient, private messageService: MessageService){}
+  constructor(private activatedRoute: ActivatedRoute, private confirmationService: ConfirmationService, private photoService: PhotoService, private location: Location, private https:HttpClient, private messageService: MessageService){}
 
   ngOnInit() {
     this.broadCast();
@@ -86,11 +87,20 @@ export class PhotoComponent {
       this.selectedFiles = undefined;
     });
     this.getPhotosByPostId();
+    window.location.reload();
   }
 
   selectFile(event : any) {
     this.selectedFiles = event.target.files;
     this.file = this.selectedFiles[0].name;
+  }
+
+  openPhotoURL(photoURL : string) {
+    window.open(photoURL);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
   broadCast(): void {

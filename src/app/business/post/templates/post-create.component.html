@@ -9,7 +9,7 @@
       <div class="campo">
         <label>Descrição:</label>
         <div class="p-field">
-          <input pInputText [(ngModel)]="_postCreate.description" placeholder="Descrição" name="description" formControlName="description" [ngClass]="{'is-invalid': validation.description.touched && validation.description.errors}" class="form-input">
+          <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="_postCreate.description" placeholder="Descrição" name="description" formControlName="description" [ngClass]="{'is-invalid': validation.description.touched && validation.description.errors}" class="form-input"></textarea>
           <div *ngIf="validation.description.errors" class="invalid-feedback">
             <div *ngIf="validation.description.errors.required">
               <span>A descrição da publicação não pode ficar em branco</span>
@@ -18,22 +18,7 @@
               <span>Não é permitido menos de 10 caracteres</span>
             </div>
             <div *ngIf="validation.description.errors.maxlength">
-              <span>Não é permitido mais de 100 caracteres</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="campo">
-        <label>Imagem principal:</label>
-        <div class="p-field">
-          <input pInputText [(ngModel)]="_postCreate.mainImage" placeholder="Imagem principal" name="mainImage" formControlName="mainImage" [ngClass]="{'is-invalid': validation.mainImage.touched && validation.mainImage.errors}" class="form-input">
-          <div *ngIf="validation.mainImage.errors" class="invalid-feedback">
-            <div *ngIf="validation.mainImage.errors.minlength">
-              <span>Não é permitido menos de 10 caracteres</span>
-            </div>
-            <div *ngIf="validation.mainImage.errors.maxlength">
-              <span>Não é permitido mais de 100 caracteres</span>
+              <span>Não é permitido mais de 200 caracteres</span>
             </div>
           </div>
         </div>

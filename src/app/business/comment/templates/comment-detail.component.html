@@ -9,10 +9,10 @@
       <div class="campo">
         <label>Comentário:</label>
         <div class="p-field">
-          <input pInputText [(ngModel)]="_comment.comment" placeholder="Comentário" name="comment" formControlName="comment" [ngClass]="{'is-invalid': validation.comment.touched && validation.comment.errors}" class="form-input">
+          <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="_comment.comment" placeholder="Comentário" name="comment" formControlName="comment" [ngClass]="{'is-invalid': validation.comment.touched && validation.comment.errors}" class="form-input"></textarea>
           <div *ngIf="validation.comment.errors" class="invalid-feedback">
             <div *ngIf="validation.comment.errors.required">
-              <span>A descrição da publicação não pode ficar em branco</span>
+              <span>O comentário não pode ficar em branco</span>
             </div>
             <div *ngIf="validation.comment.errors.minlength">
               <span>Não é permitido menos de 10 caracteres</span>

@@ -3,7 +3,7 @@
 <input type="file" (change)="selectFile($event)">
 
 <button pButton pRipple type="button" [disabled]="!selectedFiles" (click)="upload()" label="Salvar foto" class="p-button-outlined p-button-success"></button>
-
+<button (click)="goBack()" pButton pRipple type="button" label="Voltar" class="p-button-outlined p-button-secondary"></button>
 <br><br>
 
 <p-progressSpinner *ngIf="spinner"></p-progressSpinner>
@@ -30,7 +30,7 @@
           <td> </td>
           <td> </td>
           <td class="botoes">
-            <button onclick="_photos.photoPath" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"></button>
+            <button (click)="openPhotoURL(_photos.photoPath)" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"></button>
             <button (click)="deleteById(_photos.id)" pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"></button>
           </td>
         </tr>

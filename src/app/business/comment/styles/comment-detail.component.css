@@ -9,32 +9,21 @@ h2 {
   text-align: center;
 }
 
-.p-grid {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.select {
-  width: min-content;
-  margin-top: -20px;
-}
-
-.p-grid>.p-col, .p-grid>[class*=p-col] {
-  box-sizing: border-box;
-}
-
-.p-field {
-  margin-bottom: 1rem;
-}
-
-.p-md-4 {
-  width: 33.3333%;
-  flex: 0 0 auto;
-  padding: .5rem;
-}
-
 .container {
   margin-top: 20px;
+}
+
+.container table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.container table td {
+  border: solid 1px #000;
+  border-style: solid none;
+  padding: 10px;
 }
 
 .formulario {
@@ -45,6 +34,23 @@ h2 {
   margin-top: 5px;
   margin-right: 3px;
   float: right;
+}
+
+.form-input {
+  width: 100%;
+}
+
+.campo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.p-field {
+  margin-top: 2px;
+}
+
+.p-col-12 {
+  margin-top: 2px;
 }
 
 .form-input.is-invalid,.was-validated .form-input:invalid {

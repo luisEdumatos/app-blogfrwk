@@ -26,8 +26,7 @@ export class PostDetailComponent implements OnInit {
     this.broadCast();
     this.getPostByID();
     this.formPost = this.fb.group({
-      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]],
-      mainImage: ['', [Validators.minLength(10), Validators.maxLength(100)]],
+      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(200)]],
       mainLink: ['', [Validators.minLength(10), Validators.maxLength(100)]]
     })
   }
