@@ -4,12 +4,14 @@ import { PostCreateComponent } from './business/post/components/post-create.comp
 import { PostDetailComponent } from './business/post/components/post-detail.component';
 import { CommentCreateComponent } from './business/comment/components/comment-create.component';
 import { CommentDetailComponent } from './business/comment/components/comment-detail.component';
+import { PhotoComponent } from './business/photo/components/photo.component';
 import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './security/login/login.component';
 import { RegisterComponent } from './security/register/register.component';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
+
 
 const routes: Routes = [
   {
@@ -20,7 +22,8 @@ const routes: Routes = [
       { path: 'posts/create-post', component: PostCreateComponent },
       { path: 'posts/info/:id', component: PostDetailComponent },
       { path: 'posts/info/:id/comment/:comment_id', component: CommentDetailComponent },
-      { path: 'posts/info/:id/comment-create', component: CommentCreateComponent }
+      { path: 'posts/info/:id/comment-create', component: CommentCreateComponent },
+      { path: 'posts/info/:id/photo-gallery', component: PhotoComponent }
     ],
     canActivate: [AuthGuard]
   },

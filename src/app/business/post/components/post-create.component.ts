@@ -24,11 +24,23 @@ export class PostCreateComponent implements OnInit {
   ngOnInit() {
     this.broadCast();
     this._postCreate = new PostCreate();
+    this._postCreate.mainImage = "";
     this.formPost = this.fb.group({
       description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]],
       mainImage: ['', [Validators.minLength(10), Validators.maxLength(100)]],
       mainLink: ['', [Validators.minLength(10), Validators.maxLength(100)]]
     })
+  }
+
+  selectFile(event: any) {
+    if (event.target.files) {
+      let reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      console.log(reader.readAsDataURL(event.target.files[0]));
+      reader.onload = (event : any) => {
+        this._postCreate.mainImage = event.target.result;
+      }
+    }
   }
 
   get validation() {

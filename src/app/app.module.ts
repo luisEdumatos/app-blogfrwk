@@ -24,6 +24,7 @@ import { PostDetailComponent } from './business/post/components/post-detail.comp
 import { CommentComponent } from './business/comment/components/comment.component';
 import { CommentCreateComponent } from './business/comment/components/comment-create.component';
 import { CommentDetailComponent } from './business/comment/components/comment-detail.component';
+import { PhotoComponent } from './business/photo/components/photo.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
@@ -40,6 +41,7 @@ import { RegisterComponent } from './security/register/register.component';
     CommentComponent,
     CommentCreateComponent,
     CommentDetailComponent,
+    PhotoComponent,
     HeaderComponent,
     HomeComponent,
     AuthenticationComponent,
