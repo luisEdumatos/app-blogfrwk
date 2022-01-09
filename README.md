@@ -17,7 +17,11 @@ Aplicação Blogfrwk feita em Angular
 git clone https://github.com/luisEdumatos/app-blogfrwk.git
 ```
 
-**1. Inicie a aplicação**
+**2. Baixe as dependencias**
+
+Execute `npm install` na pasta do projeto para baixar todas as dependencias.
+
+**3. Inicie a aplicação**
 
 Execute `ng serve` na pasta do projeto. Vá até `http://localhost:4200/`. A tela inicial de login será carregada.
 
